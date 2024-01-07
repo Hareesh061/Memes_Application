@@ -1,1 +1,1 @@
-** I've developed a meme application using HTML, CSS, and JavaScript, incorporating API calls to fetch dynamic meme content. The user-friendly interface allows for seamless navigation, with interactive features for meme customization.** 
+**I've developed a meme application using HTML, CSS, and JavaScript, incorporating API calls to fetch dynamic meme content. The user-friendly interface allows for seamless navigation, with interactive features for meme customization.** 
