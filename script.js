@@ -1,31 +1,21 @@
-let meme = document.getElementById("memes");
-let title = document.getElementById("title");
+
+let meme = document.getElementById("meme"); 
 let getMemeBtn = document.getElementById("get-meme-btn");
 
-let url="https://meme-api.com/gimme/";
+let url = "https://meme-api.com/gimme/";
 
-let subreddit = ["catmemes","wholesomemes","dogmemes","me_irl"];
+let subreddit = ["catmemes", "wholesomememes", "dogmemes", "me_irl"]; 
 
+let getMeme = () => {
+    let randomSubreddit = subreddit[Math.floor(Math.random() * subreddit.length)];
 
-//function to get random meme
-
-let getMeme = () =>{
-    let randomSubreddit = subreddit[Math.floor(Math.random() * subreddit.length )];
-
-    fetch(url+randomSubreddit)
-        .then(resp =>resp.json())
+    fetch(url + randomSubreddit)
+        .then(resp => resp.json())
         .then(data => {
-        let memeImg = new Image();
-
-        
-        memeImg.onload = () =>{
             meme.src = data.url;
-            title.innerHTML = data.title;
-        }
-        memeImg.src = data.url;
-    });
- 
+        })
+        .catch(error => console.error("Error fetching meme:", error));
 };
 
-getMemeBtn.addEventListener("click",getMeme);
-window.addEventListener("load",getMeme);
+getMemeBtn.addEventListener("click", getMeme);
+window.addEventListener("load", getMeme);
